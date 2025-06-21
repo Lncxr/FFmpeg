@@ -2741,6 +2741,13 @@ static const AVCodecDescriptor codec_descriptors[] = {
         .profiles  = NULL_IF_CONFIG_SMALL(ff_aac_profiles),
     },
     {
+        .id        = AV_CODEC_ID_ADS,
+        .type      = AVMEDIA_TYPE_AUDIO,
+        .name      = "ads",
+        .long_name = NULL_IF_CONFIG_SMALL("Sony ADS (PS2)"),
+        .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSLESS,
+    },
+    {
         .id        = AV_CODEC_ID_AC3,
         .type      = AVMEDIA_TYPE_AUDIO,
         .name      = "ac3",

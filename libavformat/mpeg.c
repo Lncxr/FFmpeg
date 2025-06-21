@@ -623,7 +623,23 @@ redo:
     } else if (startcode == 0x69 || startcode == 0x49) {
         type     = AVMEDIA_TYPE_SUBTITLE;
         codec_id = AV_CODEC_ID_IVTV_VBI;
+    } else if (startcode == 0xff) {  /* Sony ADS-PCM (.ads, .ss2) Container Candidate */
+    int64_t pos = avio_tell(s->pb);
+    uint8_t buf[0x40];
+    ret = ffio_read_size(s->pb, buf, sizeof(buf));
+
+    if (ret < 0)
+      return ret;
+    
+    if (!memcmp(buf + 0x00, "SShd", 4) && !memcmp(buf + 0x20, "SSbd", 4)) {
+      type = AVMEDIA_TYPE_AUDIO;
+      /* Unable to jump to another demux context, route to dedicated decoder */
+      codec_id = AV_CODEC_ID_ADS;
     } else {
+      request_probe = 1;
+    }
+    avio_seek(s->pb, pos, SEEK_SET);
+} else {
 skip:
         /* skip packet */
         avio_skip(s->pb, len);
