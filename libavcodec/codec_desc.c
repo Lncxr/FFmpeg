@@ -641,6 +641,13 @@ static const AVCodecDescriptor codec_descriptors[] = {
         .props     = AV_CODEC_PROP_LOSSY,
     },
     {
+        .id        = AV_CODEC_ID_KMVC,
+        .type      = AVMEDIA_TYPE_VIDEO,
+        .name      = "kmvc",
+        .long_name = NULL_IF_CONFIG_SMALL("Karl Morton's video codec"),
+        .props     = AV_CODEC_PROP_LOSSY,
+    },
+    {
         .id        = AV_CODEC_ID_FLASHSV,
         .type      = AVMEDIA_TYPE_VIDEO,
         .name      = "flashsv",
@@ -2149,13 +2156,6 @@ static const AVCodecDescriptor codec_descriptors[] = {
         .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSLESS,
     },
     {
-        .id        = AV_CODEC_ID_PCM_F64LE,
-        .type      = AVMEDIA_TYPE_AUDIO,
-        .name      = "pcm_f64le",
-        .long_name = NULL_IF_CONFIG_SMALL("PCM 64-bit floating point little-endian"),
-        .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSLESS,
-    },
-    {
         .id        = AV_CODEC_ID_PCM_BLURAY,
         .type      = AVMEDIA_TYPE_AUDIO,
         .name      = "pcm_bluray",
@@ -2739,13 +2739,6 @@ static const AVCodecDescriptor codec_descriptors[] = {
         .long_name = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
         .props     = AV_CODEC_PROP_LOSSY,
         .profiles  = NULL_IF_CONFIG_SMALL(ff_aac_profiles),
-    },
-    {
-        .id        = AV_CODEC_ID_ADS,
-        .type      = AVMEDIA_TYPE_AUDIO,
-        .name      = "ads",
-        .long_name = NULL_IF_CONFIG_SMALL("Sony ADS (PS2)"),
-        .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSLESS,
     },
     {
         .id        = AV_CODEC_ID_AC3,
@@ -3479,6 +3472,13 @@ static const AVCodecDescriptor codec_descriptors[] = {
         .name      = "lc3",
         .long_name = NULL_IF_CONFIG_SMALL("LC3 (Low Complexity Communication Codec)"),
         .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSY,
+    },
+    {
+        .id        = AV_CODEC_ID_ADS,
+        .type      = AVMEDIA_TYPE_AUDIO,
+        .name      = "ads",
+        .long_name = NULL_IF_CONFIG_SMALL("Sony ADS (PS2)"),
+        .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSLESS,
     },
 
     /* subtitle codecs */
