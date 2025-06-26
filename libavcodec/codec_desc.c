@@ -641,13 +641,6 @@ static const AVCodecDescriptor codec_descriptors[] = {
         .props     = AV_CODEC_PROP_LOSSY,
     },
     {
-        .id        = AV_CODEC_ID_KMVC,
-        .type      = AVMEDIA_TYPE_VIDEO,
-        .name      = "kmvc",
-        .long_name = NULL_IF_CONFIG_SMALL("Karl Morton's video codec"),
-        .props     = AV_CODEC_PROP_LOSSY,
-    },
-    {
         .id        = AV_CODEC_ID_FLASHSV,
         .type      = AVMEDIA_TYPE_VIDEO,
         .name      = "flashsv",
@@ -2146,6 +2139,13 @@ static const AVCodecDescriptor codec_descriptors[] = {
         .type      = AVMEDIA_TYPE_AUDIO,
         .name      = "pcm_f64be",
         .long_name = NULL_IF_CONFIG_SMALL("PCM 64-bit floating point big-endian"),
+        .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSLESS,
+    },
+    {
+        .id        = AV_CODEC_ID_PCM_F64LE,
+        .type      = AVMEDIA_TYPE_AUDIO,
+        .name      = "pcm_f64le",
+        .long_name = NULL_IF_CONFIG_SMALL("PCM 64-bit floating point little-endian"),
         .props     = AV_CODEC_PROP_INTRA_ONLY | AV_CODEC_PROP_LOSSLESS,
     },
     {

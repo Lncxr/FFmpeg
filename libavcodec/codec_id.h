@@ -449,7 +449,6 @@ enum AVCodecID {
     AV_CODEC_ID_MP2 = 0x15000,
     AV_CODEC_ID_MP3, ///< preferred ID for decoding MPEG audio layer 1, 2 or 3
     AV_CODEC_ID_AAC,
-    AV_CODEC_ID_ADS,
     AV_CODEC_ID_AC3,
     AV_CODEC_ID_DTS,
     AV_CODEC_ID_VORBIS,
@@ -554,6 +553,7 @@ enum AVCodecID {
     AV_CODEC_ID_OSQ,
     AV_CODEC_ID_QOA,
     AV_CODEC_ID_LC3,
+    AV_CODEC_ID_ADS,
 
     /* subtitle codecs */
     AV_CODEC_ID_FIRST_SUBTITLE = 0x17000,          ///< A dummy ID pointing at the start of subtitle codecs.

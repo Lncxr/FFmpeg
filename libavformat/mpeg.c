@@ -630,8 +630,8 @@ redo:
 
     if (ret < 0)
       return ret;
-    
-    if (!memcmp(buf + 0x00, "SShd", 4) && !memcmp(buf + 0x20, "SSbd", 4)) {
+
+    if (!memcmp(buf + 0x3, "SShd", 4) && !memcmp(buf + 0x23, "SSbd", 4)) {
       type = AVMEDIA_TYPE_AUDIO;
       /* Unable to jump to another demux context, route to dedicated decoder */
       codec_id = AV_CODEC_ID_ADS;
